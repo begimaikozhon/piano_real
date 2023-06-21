@@ -12,14 +12,14 @@ class PianoBlackBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // padding: const EdgeInsets.symmetric(horizontal: 10) Padding дин прапортиси,кызматы элементти эки жан тарабынан жылдырып берет
+      // padding: const EdgeInsets.symmetric(horizontal: 10) Padding дин касиети,кызматы элементти эки жан тарабынан жылдырып берет
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SizedBox(
         width: 63,
         height: 180,
         // Visibility виджети кызматы бала класстын элементтин экранга көргөзүү же көргөзбөөнү чечет
         child: Visibility(
-          // visible:Visibility виджетинин прапортиси манисине өзгөрмөнүн атыны беребиз М: visibile,
+          // visible:Visibility виджетинин касиети манисине өзгөрмөнүн атыны беребиз М: visibile,
           visible: visible,
           child: ElevatedButton(
             style: ButtonStyle(

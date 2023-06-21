@@ -7,9 +7,10 @@ class PianoWhiteBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Padding(padding: const EdgeInsets.all(2.0), бул sized box ту орогон виджет касиети менен, кызматы кнопкалардын арасын ачып берет
     return Padding(
       padding: const EdgeInsets.all(2.0),
-      // SizedBox тун бул жердеги кызматы ElevatedButton ду SizedBox виджетине ороп алдык себеби кнопканын узун туурасын берүү үчун
+      // SizedBox ( width: 80,)тун бул жердеги кызматы ElevatedButton ду SizedBox виджетине ороп алдык себеби кнопканын узун туурасын берүү үчун
       child: SizedBox(
         width: 80,
         child: ElevatedButton(
@@ -25,7 +26,7 @@ class PianoWhiteBtn extends StatelessWidget {
             //return states.contains(MaterialState.pressed)
             //? Colors.grey
             //: null;
-            // жогоруда көргөзүлгөн buttonStyle дын прапортинин маанисинде
+            // жогоруда көргөзүлгөн buttonStyle дын касиетинин маанисинде
             // эгерде кнопканы басканда түсү grey болот а.э. басылбаса
             // bacgroundcolor до көргөзүлгөндөй ак боюнча калат
             overlayColor: MaterialStateProperty.resolveWith(
@@ -38,7 +39,7 @@ class PianoWhiteBtn extends StatelessWidget {
           ),
           // Align (выровнять) бул виджет
           child: const Align(
-            //   alignment: Alignment.bottomCenter, align дин ропортиси жана мааниси кызматы текстте берилген элементти экрандын башынанан акырына чейин созуп берет
+            //   alignment: Alignment.bottomCenter, align дин касиети жана мааниси кызматы текстте берилген элементти экрандын башынанан акырына чейин созуп берет
             alignment: Alignment.bottomCenter,
             child: Text(
               '',

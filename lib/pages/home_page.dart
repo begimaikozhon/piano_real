@@ -18,25 +18,24 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text('Flutter Piano'),
-        // title да берилген Text тин атын центрге коюп берет
+        // centerTitle: true, бул AppBarдын касиети менен мааниси title да берилген Text тин атын центрге коюп берет
         centerTitle: true,
       ),
       //  ListView.builder бул виджеттин кызматы экранга каалаган санда элементтерди кошо алабыз.
       // Экран жылып көрүнө берет
       body: ListView.builder(
-        // scrollDirection: Axis.horizontal,  бул ListView.builder дин прапортиси
+        // scrollDirection: Axis.horizontal,  бул ListView.builder дин касиети жана маниси
         // кызматы экранда чыккан элементтерди горизонтально коюп берет
 
         scrollDirection: Axis.horizontal,
-        //   itemCount: --, бул ListView.builder дин прапортиси кызматы экранга чыккан элементтердин санныны көргөзөбүз
+        //   itemCount: --, бул ListView.builder дин касиети жана мааниси, маанисине сан беребиз, кызматы экранга чыккан элементтердин саныны көргөзөбүз
         itemCount: 2,
-        // itemBuilder: бул ListView.builder дин прапортиси return чыгаруу үчүн
+        // itemBuilder: бул ListView.builder дин касиети return чыгаруу үчүн
         itemBuilder: (context, index) {
           return const Stack(
             children: [
               Row(
                 children: [
-                  // Padding(padding: const EdgeInsets.all(2.0), бул sized box ту орогон виджет прапортиси менен, кызматы кнопкалардын арасын ачып берет
                   PianoWhiteBtn(),
                   PianoWhiteBtn(),
                   PianoWhiteBtn(),
@@ -49,17 +48,18 @@ class _HomePageState extends State<HomePage> {
               // Positioned виджети бул Stack виджетинин ичине жазабыз.
               // кызматы элементтин үстүнө элемент коюп берет.
               Positioned(
-                //left  бул  Positioned виджетинин прапортиси,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө оңду көздөй жылдырып берет
+                //left:  бул  Positioned виджетинин касиети,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө оңду көздөй жылдырып берет
                 left: 40,
-                // right   бул  Positioned виджетинин прапортиси,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө солду көздөй жылдырып берет
+                // right:   бул  Positioned виджетинин касиети,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө солду көздөй жылдырып берет
                 right: 0,
-                //top  бул  Positioned виджетинин прапортиси,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө ылдыйды көздөй жылдырып берет
+                //top:  бул  Positioned виджетинин касиети,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө ылдыйды көздөй жылдырып берет
                 top: 0,
                 child: Row(
                   children: [
                     PianoBlackBtn(),
                     PianoBlackBtn(),
                     PianoBlackBtn(
+                      //visible: false, бул жерде  PianoBlackBtn классында конструктордо берилген маанини false эле аны true кылып өзгөртүп алабыз. Ошондо ушул кнопка экранга чыкпай калат.
                       visible: false,
                     ),
                     PianoBlackBtn(),
