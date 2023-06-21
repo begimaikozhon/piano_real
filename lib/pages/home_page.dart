@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:piano_real/components/piano_black_btn.dart';
+import 'package:piano_real/components/piano_white_btn.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +21,8 @@ class _HomePageState extends State<HomePage> {
         // title да берилген Text тин атын центрге коюп берет
         centerTitle: true,
       ),
+      //  ListView.builder бул виджеттин кызматы экранга каалаган санда элементтерди кошо алабыз.
+      // Экран жылып көрүнө берет
       body: ListView.builder(
         // scrollDirection: Axis.horizontal,  бул ListView.builder дин прапортиси
         // кызматы экранда чыккан элементтерди горизонтально коюп берет
@@ -28,35 +32,41 @@ class _HomePageState extends State<HomePage> {
         itemCount: 2,
         // itemBuilder: бул ListView.builder дин прапортиси return чыгаруу үчүн
         itemBuilder: (context, index) {
-          return Stack(
+          return const Stack(
             children: [
               Row(
                 children: [
-                  // SizedBox тун бул жердеги кызматы ElevatedButton ду SizedBox виджетине ороп алдык себеби кнопканын узун туурасын берүү үчун
-                  SizedBox(
-                    width: 80,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      // style: ButtonStyle кнопкага стил берүү үчүн
-                      style: ButtonStyle(
-                          // backgroundColor: MaterialStateColor.resolveWith(
-                          //(states) => Colors.white) кнопканын түсүн өзгөтүү үчүн
-                          backgroundColor: MaterialStateColor.resolveWith(
-                              (states) => Colors.white)),
-                      // Align (выровнять) бул виджет
-                      child: const Align(
-                        //   alignment: Alignment.bottomCenter, align дин ропортиси жана мааниси кызматы текстте берилген элементти экрандын башынанан акырына чейин созуп берет
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                          'do',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Padding(padding: const EdgeInsets.all(2.0), бул sized box ту орогон виджет прапортиси менен, кызматы кнопкалардын арасын ачып берет
+                  PianoWhiteBtn(),
+                  PianoWhiteBtn(),
+                  PianoWhiteBtn(),
+                  PianoWhiteBtn(),
+                  PianoWhiteBtn(),
+                  PianoWhiteBtn(),
+                  PianoWhiteBtn(),
                 ],
+              ),
+              // Positioned виджети бул Stack виджетинин ичине жазабыз.
+              // кызматы элементтин үстүнө элемент коюп берет.
+              Positioned(
+                //left  бул  Positioned виджетинин прапортиси,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө оңду көздөй жылдырып берет
+                left: 40,
+                // right   бул  Positioned виджетинин прапортиси,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө солду көздөй жылдырып берет
+                right: 0,
+                //top  бул  Positioned виджетинин прапортиси,кызматы берилген элементти кандайдыр бир башка элементтин үстүнө ылдыйды көздөй жылдырып берет
+                top: 0,
+                child: Row(
+                  children: [
+                    PianoBlackBtn(),
+                    PianoBlackBtn(),
+                    PianoBlackBtn(
+                      visible: false,
+                    ),
+                    PianoBlackBtn(),
+                    PianoBlackBtn(),
+                    PianoBlackBtn(),
+                  ],
+                ),
               ),
             ],
           );
