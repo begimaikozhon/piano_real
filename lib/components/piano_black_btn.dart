@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class PianoBlackBtn extends StatelessWidget {
@@ -5,9 +6,11 @@ class PianoBlackBtn extends StatelessWidget {
     super.key,
     // this.visible = true, бул жерде конструкторго маанини беребиз,себеби бул маанини сырттан беребиз
     this.visible = true,
+    required this.notaName,
   });
 // final bool visible; бул жерде өзгөрмө түзүп алдык жана маанисин  бербедик, аны конструкторго беребиз
   final bool visible;
+  final String notaName;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,9 @@ class PianoBlackBtn extends StatelessWidget {
                 (states) => Colors.black,
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              AudioPlayer().play(AssetSource('notes/$notaName.mp3'));
+            },
             child: Text(''),
           ),
         ),

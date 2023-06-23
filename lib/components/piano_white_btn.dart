@@ -1,9 +1,13 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class PianoWhiteBtn extends StatelessWidget {
   const PianoWhiteBtn({
     super.key,
+    required this.nameNote,
   });
+
+  final String nameNote;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,10 @@ class PianoWhiteBtn extends StatelessWidget {
       child: SizedBox(
         width: 80,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            //бул жазылган кодто кнопканы басканда нотес папкасындагы каалаган музыканы чакыра алабыз
+            AudioPlayer().play(AssetSource('notes/$nameNote.mp3'));
+          },
           // style: ButtonStyle кнопкага стил берүү үчүн
           style: ButtonStyle(
             // backgroundColor: MaterialStateColor.resolveWith(

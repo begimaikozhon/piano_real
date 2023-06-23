@@ -36,13 +36,13 @@ class _HomePageState extends State<HomePage> {
             children: [
               Row(
                 children: [
-                  PianoWhiteBtn(),
-                  PianoWhiteBtn(),
-                  PianoWhiteBtn(),
-                  PianoWhiteBtn(),
-                  PianoWhiteBtn(),
-                  PianoWhiteBtn(),
-                  PianoWhiteBtn(),
+                  PianoWhiteBtn(nameNote: 'do'),
+                  PianoWhiteBtn(nameNote: 'fa'),
+                  PianoWhiteBtn(nameNote: 're'),
+                  PianoWhiteBtn(nameNote: 'si'),
+                  PianoWhiteBtn(nameNote: 'lya'),
+                  PianoWhiteBtn(nameNote: 'sol'),
+                  PianoWhiteBtn(nameNote: 'mi'),
                 ],
               ),
               // Positioned виджети бул Stack виджетинин ичине жазабыз.
@@ -56,15 +56,24 @@ class _HomePageState extends State<HomePage> {
                 top: 0,
                 child: Row(
                   children: [
-                    PianoBlackBtn(),
-                    PianoBlackBtn(),
+                    PianoBlackBtn(notaName: 'sol'),
+                    PianoBlackBtn(
+                      notaName: 're',
+                    ),
                     PianoBlackBtn(
                       //visible: false, бул жерде  PianoBlackBtn классында конструктордо берилген маанини false эле аны true кылып өзгөртүп алабыз. Ошондо ушул кнопка экранга чыкпай калат.
                       visible: false,
+                      notaName: 'si',
                     ),
-                    PianoBlackBtn(),
-                    PianoBlackBtn(),
-                    PianoBlackBtn(),
+                    PianoBlackBtn(
+                      notaName: 'mi',
+                    ),
+                    PianoBlackBtn(
+                      notaName: 'lya',
+                    ),
+                    PianoBlackBtn(
+                      notaName: 'do2',
+                    ),
                   ],
                 ),
               ),
